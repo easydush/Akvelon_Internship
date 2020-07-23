@@ -95,3 +95,62 @@ _**A strict equality operator === checks the equality without type conversion.**
 * When values of different types are compared, they get converted to numbers (with the exclusion of a strict equality check).
 * The values null and undefined equal == each other and do not equal any other value.
 * Be careful when using comparisons like > or < with variables that can occasionally be null/undefined. Checking for null/undefined separately is a good idea.
+
+### 10. Conditional branching: if, '?'
+* A number 0, an empty string "", null, undefined, and NaN all become false. Because of that they are called “falsy” values.
+* Other values become true, so they are called “truthy”.
+
+
+### 11. Nullish coalescing operator '??'
+`coalescing` - uniting, merging
+
+The important difference is that:
+* || returns the first truthy value.
+* ?? returns the first defined value.
+* _Due to safety reasons, it’s forbidden to use ?? together with && and || operators._
+
+### 12. Loops
+There are 3 types of loops:
+
+* `while` – The condition is checked before each iteration.
+* `do..while` – The condition is checked after each iteration.
+* `for (;;)` – The condition is checked before each iteration, additional settings available.
+* To make an “infinite” loop, usually the `while(true)` construct is used. Such a loop, just like any other, can be stopped with the `break` directive.
+
+* If we don’t want to do anything in the current iteration and would like to forward to the next one, we can use the `continue` directive.
+
+* `break/continue` support labels before the loop. A label is the only way for break/continue to escape a nested loop to go to an outer one.
+
+### 13. The 'switch' statement
+* If there is no break then the execution continues with the next case without any checks.
+* Checking is always strict! ===
+
+### 14. Functions
+* A function with an empty return or without it returns undefined
+
+The syntax that we used before is called a **_Function Declaration_**:
+
+`function sayHi() {
+  alert( "Hello" );
+}`
+There is another syntax for creating a function that is called a _**Function Expression**_.
+
+It looks like this:
+
+`let sayHi = function() {
+  alert( "Hello" );
+};`
+
+* If the function is declared as a separate statement in the main code flow, that’s called a “Function Declaration”.
+* If the function is created as a part of an expression, it’s called a “Function Expression”.
+* A Function Expression is created when the execution reaches it and is usable only from that moment.
+* A Function Declaration can be called earlier than it is defined.
+* In strict mode, when a Function Declaration is within a code block, it’s visible everywhere inside that block. But not outside of it.
+* Functions are values. They can be assigned, copied or declared in any place of the code.
+
+### 15. Arrow functions
+
+Arrow functions are handy for one-liners. They come in two flavors:
+
+* Without curly braces: `(...args) => expression` – the right side is an expression: the function evaluates it and returns the result.
+* With curly braces: `(...args) => { body }` – brackets allow us to write multiple statements inside the function, but we need an explicit return to return something.
