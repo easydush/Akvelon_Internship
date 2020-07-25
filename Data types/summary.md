@@ -98,6 +98,91 @@ Objects that have indexed properties and length are called ***array-like*** Such
 
 `Array.from(obj[, mapFn, thisArg])` makes a real Array of an iterable or array-like obj, and we can then use array methods on it. The optional arguments `mapFn` and `thisArg` allow us to apply a function to each item.
 
+### 7. Map and Set
+_**Map**_ is a collection of keyed values.
+
+Methods and properties are:
+
+* `new Map()` – creates the map.
+* `map.set(key, value)` – stores the value by the key.
+* `map.get(key)` – returns the value by the key, undefined if key doesn’t exist in map.
+* `map.has(key)` – returns true if the key exists, false otherwise.
+* `map.delete(key)` – removes the value by the key.
+* `map.clear()` – removes everything from the map.
+* `map.size` – returns the current element count.
+
+
+For looping over a map, there are 3 methods:
+
+* `map.keys()` – returns an iterable for keys,
+* `map.values()` – returns an iterable for values,
+* `map.entries()` – returns an iterable for entries [key, value], it’s used by default in for..of.
+The differences from a regular Object:
+
+*  Any keys, objects can be keys.
+*  Additional convenient methods, the size property.
+
+
+A _**Set**_ is a collection of unique values.
+
+
+Its main methods are:
+
+* `new Set(iterable)` – creates the set, and if an iterable object is provided (usually an array), copies values from it into the set.
+* `set.add(value)` – adds a value, returns the set itself.
+* `set.delete(value)` – removes the value, returns true if value existed at the moment of the call, otherwise false.
+* `set.has(value)` – returns true if the value exists in the set, otherwise false.
+* `set.clear()` – removes everything from the set.
+* `set.size` – is the elements count.
+
+
+### 8. WeakMap and WeakSet
+
+_**WeakMap**_ is Map-like collection that allows only objects as keys and removes them together with associated value once they become inaccessible by other means.
+
+_**WeakSet**_ is Set-like collection that stores only objects and removes them once they become inaccessible by other means.
+
+Both of them do not support methods and properties that refer to all keys or their count. Only individual operations are allowed.
+WeakMap and WeakSet are used as “secondary” data structures in addition to the “main” object storage. Once the object is removed from the main storage, if it is only found as the key of WeakMap or in a WeakSet, it will be cleaned up automatically.
+
+### 10. Destructuring assignment
+_**Destructuring assignment**_ allows for instantly mapping an object or array onto many variables.
+
+The full object syntax:
+
+`let {prop : varName = default, ...rest} = object`
+This means that property prop should go into the variable varName and, if no such property exists, then the default value should be used.
+
+Object properties that have no mapping are copied to the rest object.
+
+The full array syntax:
+
+`let [item1 = default, item2, ...rest] = array`
+The first item goes to item1; the second goes into item2, all the rest makes the array rest.
+
+It’s possible to extract data from nested arrays/objects, for that the left side must have the same structure as the right one.
+
+### 11. Date and time
+
+* Date and time in JavaScript are represented with the `Date` object. We can’t create “only date” or “only time”: Date objects always carry both.
+* Months are counted from zero (yes, January is a zero month).
+* Days of week in `getDay()` are also counted from zero (that’s Sunday).
+* Date auto-corrects itself when out-of-range components are set. Good for adding/subtracting days/months/hours.
+* Dates can be subtracted, giving their difference in milliseconds. That’s because a Date becomes the timestamp when converted to a number.
+* Use `Date.now()` to get the current timestamp fast.
+
+### 12. JSON methods, toJSON
+
+* JSON is a data format that has its own independent standard and libraries for most programming languages.
+* JSON supports plain objects, arrays, strings, numbers, booleans, and null.
+* JavaScript provides methods JSON.stringify to serialize into JSON and JSON.parse to read from JSON.
+* Both methods support transformer functions for smart reading/writing.
+* If an object has toJSON, then it is called by JSON.stringify.
+
+
+
+
+
 
 
 
