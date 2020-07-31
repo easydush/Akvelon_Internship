@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+
+<div class="menu">
+    <input type="button" onclick="openMenu()" value="▶" id="right"/><input type="button" id="down" onclick="closeMenu()" value="▼" hidden="true"/><input type="button" onclick="openMenu()" value="Sweeties (click me)!" />
+<ul id="menu" hidden="true">
+    <li>Cake</li>
+    <li>Donut</li>
+    <li>Honey</li>
+</ul>
+</div>
+<script>
+    function openMenu() {
+        document.getElementById('menu').hidden = false;
+        document.getElementById('right').hidden = true;
+        document.getElementById('down').hidden = false;
+    }
+    function closeMenu() {
+        document.getElementById('menu').hidden = true;
+        document.getElementById('right').hidden = false;
+        document.getElementById('down').hidden = true;
+    }
+</script>
+</body>
+</html>
