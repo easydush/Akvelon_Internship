@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<textarea style="width:200px; height: 60px;" id="area"></textarea>
+<script>
+    document.addEventListener('DOMContentLoaded',(event)=>{
+        let text = localStorage.getItem('areaValue');
+        if(text){
+            document.getElementById('area').textContent = text;
+        }
+
+    });
+    document.getElementById('area').addEventListener('blur',(event)=>{
+        localStorage.setItem('areaValue', event.target.value)
+    });
+</script>
+</body>
+</html>
