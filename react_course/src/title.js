@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+// useEffect example
 export default function Effect() {
     let [light, setLight] = useState(0);
     const setOff = () => setLight(0);

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom";
 
 import "./App.css";
-
+// useState example
 export default function LightBulb() {
     let [light, setLight] = useState(0);
 
